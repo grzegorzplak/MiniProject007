@@ -1,0 +1,22 @@
+﻿
+<h1>Radio</h1>
+<div class="row">
+    @if (ViewBag.EnglishLevel == null)
+    {
+        <form method="post" asp-controller="Home" asp-action="PageRadio">
+            What is your English level?<br />
+            <input type="radio" name="englishLevel" value="A1" />&nbsp;A1<br />
+            <input type="radio" name="englishLevel" value="A2" />&nbsp;A2<br />
+            <input type="radio" name="englishLevel" value="B1" />&nbsp;B1<br />
+            <input type="radio" name="englishLevel" value="B2" />&nbsp;B2<br />
+            <input type="radio" name="englishLevel" value="C1" />&nbsp;C1<br />
+            <input type="radio" name="englishLevel" value="C2" />&nbsp;C2<br />
+            <input type="submit" value="Send" class="col-1" />
+        </form>
+    }
+    else
+    {
+        <label>Your English level is @ViewBag.EnglishLevel</label>
+        <a asp-controller="Home" asp-action="PageRadio">Back</a>
+    }
+</div>

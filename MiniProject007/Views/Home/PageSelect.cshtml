@@ -1,0 +1,21 @@
+﻿
+<h1>Select</h1>
+<div class="row">
+    @if (ViewBag.FavouriteColor == null)
+    {
+        <form method="post" asp-controller="Home" asp-action="PageSelect">
+            <select name="favouriteColor" class="col-2">
+                <option>red</option>
+                <option>green</option>
+                <option>blue</option>
+                <option>other</option>
+            </select>
+            <input type="submit" value="Send" class="col-1" />
+        </form>
+    }
+    else
+    {
+        <label>Your favourite color is @ViewBag.FavouriteColor</label>
+        <a asp-controller="Home" asp-action="PageSelect">Back</a>
+    }
+</div>

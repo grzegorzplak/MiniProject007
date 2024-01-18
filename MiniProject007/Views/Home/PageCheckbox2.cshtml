@@ -1,0 +1,26 @@
+﻿
+<h1>Checkbox - many options to choose</h1>
+<div class="row">
+    @if (ViewBag.Continent == null)
+    {
+        <form method="post" asp-controller="Home" asp-action="PageCheckbox2">
+            Which continent have you visited?
+            <input type="checkbox" name="continent[]" value="Europe" />&nbsp;Europe<br />
+            <input type="checkbox" name="continent[]" value="Africa" />&nbsp;Africa<br />
+            <input type="checkbox" name="continent[]" value="Asia" />&nbsp;Asia<br />
+            <input type="checkbox" name="continent[]" value="South America" />&nbsp;South America<br />
+            <input type="checkbox" name="continent[]" value="North America" />&nbsp;North America<br />
+            <input type="checkbox" name="continent[]" value="Australia" />&nbsp;Australia<br />
+            <input type="submit" value="Send" class="col-1" />
+        </form>
+    }
+    else
+    {
+        <label>You have visited:</label>
+        @foreach (var item in ViewBag.Continent)
+        {
+            @item<br />
+        }
+        <a asp-controller="Home" asp-action="PageCheckbox2">Back</a>
+    }
+</div>

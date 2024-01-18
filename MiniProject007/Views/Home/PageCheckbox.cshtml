@@ -1,0 +1,16 @@
+﻿
+<h1>Checkbox - one option to choose</h1>
+<div class="row">
+    @if (ViewBag.IsActive == null)
+    {
+        <form method="post" asp-controller="Home" asp-action="PageCheckbox">
+            <input type="checkbox" name="isActive" value="active" />&nbsp;active<br />
+            <input type="submit" value="Send" class="col-1" />
+        </form>
+    }
+    else
+    {
+        <label>User is @ViewBag.IsActive</label>
+        <a asp-controller="Home" asp-action="PageCheckbox">Back</a>
+    }
+</div>
